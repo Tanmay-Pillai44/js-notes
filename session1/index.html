@@ -37,6 +37,17 @@
         4. In execution phase, code is executed line by line, assigning values to variable, whenever a function get called a new execution context (Functional Execution Context) is created having same 2 phases.
     </div>
 
+    <pre>
+        var a=2;
+        function square (num){
+            var ans=num*num;
+            return ans;
+        }
+        var square2= square(a);
+        var square3= square(4);
+    </pre>
+
+    <img src="./img.png" alt="">
 
     <script src="script.js"></script>
 </body>
