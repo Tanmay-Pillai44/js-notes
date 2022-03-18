@@ -14,14 +14,44 @@
         2. let is block scoped. It can be reassigned. It cannot be redeclared. <br>
         3. const is vlock scoped. It cannot be reassigned. It cannot be redeclared. Have to assign value with declaration itself.
     </div> <br>
+    <pre>
+        console.log("Example for Var");
+        var a=5;
+        var a=10;
+        console.log(a);      //5   //10
+
+        console.log("Example for Let");
+        let a=10;
+        let a=20;      //we cannot redeclare.
+        console.log(a);   //10    //error
+
+        console.log("Example for Const");
+        const a=10;
+        a=20;
+        console.log(a);  //throws error that assigned to fixed value (cannot be modified).
+    </pre> <br>
 
     <div>
         <i>What is Hoisting?</i> <br>
         <b>Ans:</b> It is deafult Javascript Mechanism when our variables and functions declarations are moved to top of their scope before the code execution.
     </div> <br>
+    <pre>
+        console.log("Example of Hoisting");
+        a=10;
+        console.log(a);   //10
+        var a;   // var a appears to move to the top of its scope.
+    </pre> <br>
+
     <div>
         <i>What is Temperal Dead Zone?</i> <br>
         <b>Ans:</b> The time between the variables hoisted and the variables get initialized is called the TDZ.
-    </div>
+    </div> <br>
+    <pre>
+        console.log("Example of TDZ");
+        console.log(a);   //undefined
+        console.log(b);   //Cannot access 'b' before initialization
+        var a=10;
+        let b=20;
+    </pre>
 </body>
 </html>
