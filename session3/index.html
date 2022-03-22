@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            font-size: 1rem;
+            color: rgb(95, 95, 95);
+        }
+    </style>
+</head>
+<body>
+    <h1>Operators in Javascript</h1>
+    <h2>1. Arithmetic Operators</h2>
+    <pre>
+    +, -, *, /, %, ++, --
+
+    Ex:
+    let x = 5;
+    let y = 2;
+    let sum = x + y;
+    let sub = x - y;
+    let multiply = x * y;
+    let division = x / y;
+    let remainder = x % y;
+
+    ++x (pre increment), x++ (post increment)
+    ++y (pre decrement), y++ (post decrement)
+    </pre>
+
+    <h2>2. Comparison Operators</h2>
+    <pre>
+    ===, >==, <==, >==, !==
+    It only returns boolean value i.e. true or false
+
+    Ex:
+    let x = 5;
+    let y = 2;
+    console.log(x === y); // false
+    </pre>
+
+    <h2>3. Logical Operators</h2>
+    <pre>
+    && (and), || (or), ! (not)
+
+    Ex:
+    let x = 5;
+    let y = 2;
+    if (x === 5 && y === 1) {
+        console.log("true");
+    }
+    else {
+        console.log("false");
+    }
+    </pre>
+
+    <h2>4. Assignment Operators</h2>
+    <pre>
+    =, +=, -=, /=, %=
+
+    Ex:
+    let x = 5;
+    x += 2;
+    console.log(x); // 7
+    </pre>
+
+    <h2>5. Ternary Operator</h2>
+    <pre>
+    condition ? exprIfTrue : exprIfFalse
+
+    Ex:
+    let x = 5;
+    let ans = (x >== 3) ? "Yes" : "No";
+    console.log(ans);
+    </pre>
+
+    <h2>6. Bitwise Operators</h2>
+    <pre>
+    &   AND
+    |   OR
+    ^   XOR
+    ~   NOT
+    <<  Left Shift bitwise
+    >>  Right Shift bitwise
+    >>> Zero Fill Right Shift
+    </pre>
+    <img src="./img.png" alt="">
+</body>
+</html>
