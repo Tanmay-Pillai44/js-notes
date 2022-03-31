@@ -12,6 +12,141 @@
     </style>
 </head>
 <body>
+    <h1 style="text-align: center;">Objects</h1>
+    <h3>What is an object?</h3>
+        <p>Object is a no primitive datatype which stores information as a key-value pair.</p>
 
+        <pre>
+            Ex:
+
+            var obj={
+                name: "Tanmay",
+                age: 22,
+            }
+        </pre>
+
+        <h3>What are the different ways to create objects in JS?</h3>
+
+        <p>There are 4 ways to create objects in JS :</p>
+        <ul>
+            <li>Object using constructor.</li>
+            <li>Object using object literal.</li>
+            <li>Object using function constructor.</li>
+            <li>Object using Object.create method</li>
+        </ul>
+
+        <h3>Object using constructor:</h3>
+        <pre>
+            var obj=new Object();
+            obj.name="Tanmay";
+            obj.age="22";
+        </pre>
+
+        <h3>Object using object literal:</h3>
+        <pre>
+            var obj={
+                name: "Omkar",
+                age: 24,
+            }
+        </pre>
+
+        <h3>Object using function constructor:</h3>
+        <pre>
+             function sum(a,b){
+                this.a=a;
+                this.b=b;
+
+            }
+
+            var sum1=new sum(1,2);
+            var sum2=new sum(5,6);
+           </pre>
+
+        <h3>Object using <i>Object.create</i> method: <br>
+            &nbsp; &nbsp; &nbsp; This method allows us to create a new object using existing object as the prototype of the newly created object. </h3>
+
+        <pre>
+            var obj={
+                name: "Rahul",
+                age: 21
+            }
+
+            var newObj=Object.create(obj);
+        </pre>
+
+        <h3>What is object keys and value properties in JS?</h3>
+        <p>Object keys is a object property which returns all the keys of the object.</p>
+
+        <pre>
+            I/p:
+            var obj={
+                name: "Rahul",
+                age: 21
+            }
+
+            console.log(Object.keys(obj));
+
+            O/p:
+            [name,age]
+        </pre>
+
+        <p>Object values is a object property which returns all the values of the object.</p>
+        <pre>
+            I/p:
+            var obj={
+                name: "Rahul",
+                age: 21
+            }
+
+            console.log(Object.values(obj));
+
+            O/p:
+            [Rahul,21]
+        </pre>
+
+        <h3>What is a spread operator?</h3>
+        <p>Spread operator is used to unpack values from array expressions,string or object with more than 0 arguments or elements are expected.</p>
+
+        <pre>
+            I/p:
+
+            var obj={
+                name: "Tanmay",
+                age: 22
+            }
+
+            var obj1={
+                ...obj,
+                place: "pune"
+            }
+            console.log(obj1);
+
+            O/p:
+
+            obj1={
+                name: "Tanmay",
+                age: 22,
+                place: "pune"
+            }
+        </pre>
+
+        <h3>What is <i>this</i> keyword in JS?</h3>
+        <p>This keyword points to the current object ie. most of the time it points to the global object only means the window object.</p>
+
+        <pre>
+            I/p:
+            var obj={
+                name: "Tanmay",
+                age: 22,
+                print: function(){
+                    console.log("name="+this.name+" and age"+this.age)
+                }
+            }
+
+            obj.print();
+
+            O/p:
+            name=Tanmay and age=22
+        </pre>
 </body>
 </html>
