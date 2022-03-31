@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            font-size: 1rem;
+        }
+
+        div > b {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <b>Q 1 : Given array of students marks [23, 45, 67, 78, 91], add 10 in all the elements of an array by using map and forEach function</b> <br>
+        <b>Ans:</b> <br>
+        <pre>
+            let arr = [23, 45, 67, 78, 91]
+        </pre>
+        <i>Using map:</i>
+        <pre>
+            let ans = arr.map(num => num + 10);
+            console.log(ans);
+        </pre>
+        <i>Using forEach:</i>
+        <pre>
+            let newArr = [];
+            arr.forEach(num => newArr.push(num + 10));
+            console.log(newArr);
+        </pre>
+    </div> <br>
+    <div>
+        <b>Q 2 : Given array of students marks [23, 45, 67, 78, 91], find out how many students have got marks less than 65 and return the array.</b> <br>
+        <b>Ans:</b> <br>
+        <pre>
+            let arr = [23, 45, 67, 78, 91];
+
+            let ans = arr.filter(num => num < 65);
+            console.log(ans.length);
+        </pre>
+    </div> <br>
+    <div>
+        <b>Q 3 : Return the sum of all the marks of students present in given array [23, 45, 67, 78, 91]</b> <br>
+        <b>Ans:</b> <br>
+        <pre>
+            let arr = [23, 45, 67, 78, 91];
+
+            let ans = arr.reduce((sum, num) => {
+                        sum += num;
+                        return sum;
+                        }, 0);
+            console.log(ans);
+        </pre>
+    </div> <br>
+    <div>
+        <b>Q 4 : Replace "Peter" with "John" in whole string: Given String: "Peter is a good friend of Mike. Peter is working in a IT company in Australia".</b> <br>
+        <b>Ans:</b> <br>
+        <pre>
+            let str = "Peter is a good friend of Mike. Peter is working in a IT company in Australia".;
+
+            console.log(str.replaceAll("Peter", "Mike"));
+        </pre>
+    </div> <br>
+    <div>
+        <b>Q 5 : Reverse a given string "Hello this is me", result should b "me is this Hello".</b> <br>
+        <b>Ans:</b> <br>
+        <pre>
+            let str = "Hello this is me";
+            console.log(str.split(' ').reverse().join(' '));
+        </pre>
+    </div> <br>
+    <div>
+        <b>Q 6 : Create object by all 4 possible way and explain with example.</b> <br>
+        <b>Ans:</b> <br>
+        <p>There are 4 ways to create objects in JS :</p>
+        <ul>
+            <li>Object Literals</li>
+            <li>New operator or constructor.</li>
+            <li>Object.create method.</li>
+            <li>Object using constructor:</li>
+        </ul>
+        <h4>Object Literals:</h4>
+        <p>An object literal, also called an object initializer, is a comma-separated set of paired names and values.</p>
+        <pre>
+            var obj={
+                name: "Omkar",
+                age: 24,
+            }
+        </pre>
+        <h4>New operator or constructor:</h4>
+        <p>If you call a function using a new operator, the function acts as a constructor and returns an object.</p>
+        <pre>
+            function Car(model, color) {
+                this.model = model;
+                this.color = color;
+            }
+
+            var c1 = new Car('BMW', 'red');
+        </pre>
+        <h4>Object.create method:</h4>
+        <p>Object.create() method, which allows you to specify the prototype object and the properties.</p>
+        <pre>
+            var Car = {
+                model: 'BMW',
+                color: 'red'
+            }
+            // You can use the Car object as a prototype to create another object.
+            var ElectricCar = Object.create(Car);
+        </pre>
+        <h4>Object using constructor:</h4>
+        <pre>
+            var obj=new Object();
+            obj.name="Tanmay";
+            obj.age="22";
+        </pre>
+    </div> <br>
+    <div>
+        <b>Q 7 : Create an object contain name age salary as the properties, retrieve key and values in seperate arrays</b> <br>
+        <b>Ans:</b> <br>
+        <pre>
+            var obj = {
+                name: "Alex",
+                age: 22,
+                salary: 20000
+            }
+
+            console.log(Object.keys(obj)); // [name, age, salary]
+            console.log(Object.values(obj)); // [Alex, 22, 20000]
+        </pre>
+    </div> <br>
+    <div>
+        <b>Q 8 : Explain call bind and apply in JS</b> <br>
+        <b>Ans:</b> <br>
+        <pre>
+            function greeting () {
+                console.log(`Hi, I am ${this.name} and I am ${this.age} years old`);
+            }
+            const john = {
+                name: 'John',
+                age 24
+            }
+            const jane = {
+                name: 'Jane',
+                age 22
+            }
+        </pre>
+        <h4>call() and apply():</h4>
+        <p>Both sets <i>this</i> keyword inside the function and immediately executes that function. Only the difference is <b>apply()</b> methods accpets an array of arguments instead of comma seperated values.</p>
+        <pre>
+            function.call(thisArg, Arg1, Arg2);
+            function.apply(thisArg, [agrumentsArr])
+
+            Ex:
+            greeting.call(john); // "Hi, I am John and I am 24 years old"
+            greeting.apply(jane); // "Hi, I am Jane and I am 22 years old"
+        </pre>
+        <h4>bind():</h4>
+        <p>It creates a new function and sets the <i>this</i> keyword to the specified object.</p>
+        <pre>
+            const greetingJohn = greeting.bind(john);
+            greetingJohn(); // "Hi, I am John and I am 24 years old"
+            OR
+            greeting.bind(john)();
+        </pre>
+    </div> <br>
+    <div>
+        <b>Q 9 : Explain Prototype Chaining</b> <br>
+        <b>Ans:</b> <br>
+        <ol>
+            <li>Prototypes are the means of inheritance in JS.</li>
+            <li>The Prototype of ana Object could also have prototype object and this continues until we reach the top level, where no prototype object is there.</li>
+        </ol>
+        <p>This is called Prototype Chaining.</p>
+        <pre>
+            // pocket -> bed -> table -> head
+
+            let head = {
+                glasses: 1
+            }
+
+            let table = {
+                pen: 3,
+                __proto__: head
+            }
+
+            let bed = {
+                sheet: 1,
+                pillow: 2,
+                __proto__: table
+            }
+
+            let pockets = {
+                money: 2000,
+                __proto__: bed
+            }
+        </pre>
+    </div> <br>
+</body>
+</html>

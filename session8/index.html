@@ -44,22 +44,21 @@
 
         <h3>Object using object literal:</h3>
         <pre>
-            var obj={
-                name: "Omkar",
-                age: 24,
+            var car = {
+                model: 'bmw',
+                color: 'red',
+                price: 2000
             }
         </pre>
 
         <h3>Object using function constructor:</h3>
         <pre>
-             function sum(a,b){
-                this.a=a;
-                this.b=b;
-
+            function Car(model, color) {
+                this.model = model;
+                this.color = color;
             }
 
-            var sum1=new sum(1,2);
-            var sum2=new sum(5,6);
+            var c1 = new Car('BMW', 'red');
            </pre>
 
         <h3>Object using <i>Object.create</i> method: <br>
