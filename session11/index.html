@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            font-size: 1rem;
+        }
+        pre > div {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">setTimeout function, Event loop and callback queue, callback function, callback hell</h1>
+
+    <h2>setTimeout() Method:</h2>
+    <div>The global setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires.</div>
+    <h4>Syntax:</h4>
+    <pre>
+        var timeoutID = setTimeout(function[, delay])
+
+        Ex:-
+        Input =>
+            console.log("I'm First");
+
+            setTimeout(()=>{
+                console.log("I'm  executed after 3s")
+            },3000);
+
+            console.log("I'm Second");
+
+            Output =>
+                I'm First
+                I'm Second
+                I'm  executed after 3s
+    </pre>
+
+    <h2>Event Loop:</h2>
+    <div>
+        The event loop is a constantly running process that monitors both the callback queue and the call stack.
+    </div>
+    <div>
+        If the call stack is not empty, the event loop waits until it is empty and places the next function from the callback queue to the call stack. If the callback queue is empty, nothing will happen.
+    </div>
+    <img src="./eventloop.png" alt="" srcset="">
+    <h2>Closure:</h2>
+    <div>
+        A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
+    </div>
+    <div>
+        In JavaScript, closures are created every time a function is created, at function creation time.
+    </div>
+    <pre>
+        Example =>
+            function OuterFunction() {
+
+                var outerVariable = 100;
+
+                function InnerFunction() {
+                    console.log(outerVariable);
+                }
+
+                return InnerFunction;
+            }
+            var innerFunc = OuterFunction();
+
+            innerFunc(); // 100
+            <div> In the above example, return InnerFunction; returns InnerFunction from OuterFunction when <br> you call OuterFunction(). A variable innerFunc reference the InnerFunction() only, not <br> the OuterFunction(). So now, when you call innerFunc(), it can still access outerVariable <br> which is declared in OuterFunction(). This is called Closure.</div>
+    </pre>
+
+    <h2>Callback Queue: </h2>
+    <div>
+        When the browser is done with the timer (or any other API which it provides for JS), it doesn't transfer the codes to be executed back to Javascript immediately. When the browser is done, it stores the codes in a callback queue.
+    </div>
+    <div>
+        The Callback queue waits until the call stack is empty. Afterwards, the codes in it are executed in First In, First Out (FIFO) order.
+    </div> <br>
+    <img src="./callbackqueue.png" alt="">
+</body>
+</html>
