@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Callback Function: </h2>
+    <div>A callback is a function passed as an argument to another function. This technique allows a function to call another function.</div>
+    <pre>
+        function secondFunc (callBack){
+            console.log("I'm Second");
+            callBack();
+        }
+        function firstFunc () {
+            console.log('I'm First');
+        }
+        firstFunc();
+    </pre> <hr>
+    <h2>Callback Hell:</h2>
+    <div>This is a big issue caused by coding with complex nested callbacks. Here, each and every callback takes an argument that is a result of the previous callbacks. <br> In this manner, The code structure looks like a pyramid, making it difficult to read and maintain. Also, if there is an error in one function, then all other functions get affected.</div>
+    <pre>
+        setTimeout(()=>{
+            console.log("1")
+                setTimeout(()=>{
+                    console.log("2")
+                        setTimeout(()=>{
+                            console.log("3")
+                                setTimeout(()=>{
+                                    console.log("4")
+                                },2000)
+                        },4000)
+                },5000)
+        },3000)
+    </pre> <hr>
+    <h2>Promises:</h2>
+    <div>The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.</div>
+    <p>A Promise is in one of these states:</p>
+    <ul>
+        <li><b>pending:</b><span>initial state, neither fulfilled nor rejected.</span></li>
+        <li><b>fulfilled:</b><span>meaning that the operation was completed successfully.</span></li>
+        <li><b>rejected:</b><span>meaning that the operation failed.</span></li>
+    </ul>
+    <pre>
+        const promise = new Promise((resolve, reject) => {
+            const x = 10;
+            const y = 10;
+            if (x == y) {
+                console.log("Both numbers are same");
+                resolve();
+            }
+            else {
+                console.log("Both numbers are different");
+                reject();
+            }
+        });
+
+        promise
+            .then((result) => {
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    </pre> <hr>
+    <h2>Async and Await:</h2>
+    <div>An async function is a function declared with the async keyword, and the await keyword is permitted within it. <br> The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.</div>
+    <pre>
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("second");
+                resolve();
+            }, 1000);
+        });
+
+        async function print() {
+            console.log('first')
+            await promise;
+            console.log("third");
+        }
+        print();
+    </pre>
+</body>
+</html>
